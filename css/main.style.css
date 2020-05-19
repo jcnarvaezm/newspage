@@ -17,19 +17,56 @@ header{
 .imgHeader img{
     margin: 11px auto;
 }
-.ul-sect{
+.ulPrimary{
     display: flex;
     list-style: none;
     margin-bottom: 0;
     align-items: center;
     margin-left: 5%;
 }
-.ul-sect li{
+.ulPrimary li{
     margin: 1em;
 }
-.ul-sect li a{
+.ulPrimary li a{
     color: #000;
     font-size: 16px;   
+}
+.ulPrimary li .ulSecundary{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: rotateY(240deg) scale(0);
+    transition: all 1s;
+    z-index: 100;
+    padding: -5em;
+    background: #fff;
+    box-shadow: 1px 1px 10px 0 black;
+    list-style: none;
+}
+.ulPrimary li:nth-child(1):hover > .ulSecundary{
+    transform: rotateY(0deg) scale(1);
+    transition: all 1s;
+}
+
+.ulSecundary li{
+    margin: 0.5em 1em;
+}
+header nav #ul-1 li .ul-2 li a{
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    z-index: 100;
+    padding: 5px;
+    border-bottom: 0; 
+}
+
+header nav #ul-1 li a:hover, header nav .ul-2 li a:hover{
+    color: #fff;
+    text-decoration: none;
+    border-bottom: solid 0.1em #fff; 
+}
+.fa-angle-down{
+    font-size: 10px;
 }
 .userHeader{
     background-color: #9100AD;
@@ -39,7 +76,7 @@ header{
     text-align: center;
     align-items: center;
     position: absolute;
-    right: 0;
+    right: 15px;
     transform: translateY(75%);
 }
 .userHeader p{
@@ -54,15 +91,57 @@ header{
 }
 .principal{
     position: relative;
-    transform: translateY(91px);
+    padding-top: 91px;
+    background-color: #F2F4F8;
 }
 .rectangle{
     background-color: #DFEFFD;
     width: 100%;
+    position: relative;
 }
 .notice{
     color: #1D2121;
     font-size: 16px;
     width: 100%;
     padding: 13px 18px;
+}
+
+.fa-window-close{
+    position: absolute;
+    right: 1em;
+    top: 0%;
+    transform: translateY(100%);
+    color: #ccc;
+}
+.new{
+    padding: 2em;
+    position: relative;
+}
+#newContainer{
+    background-color: #fff;
+    border-radius: .25em;
+}
+.imgNew{
+    max-height: 150px;
+    position: relative;
+}
+.imgNew, .imgNew img{
+    width: 100%;
+    height: 100%;
+}
+.titular{
+    margin: 1em 0;
+    text-align: justify;
+    position: relative;
+}
+.summary{
+    position: relative;
+    bottom: 0;
+}
+.btn-more{
+    text-align: center;
+}
+.btn-more button{
+    margin: 2em auto;
+    margin-bottom: 5em;
 }
