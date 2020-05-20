@@ -1,88 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="css/main.style.css" />
-    <title>NEWS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/regularexpression.js"></script>
+  <link rel="stylesheet" href="css/main.style.css" />
+  <title>NEWS</title>
 </head>
 <body>
-    <script src="js/index.js"></script>
-    <header class="fixed-top">
-        <div class="container headerPrincipal">
-            <div class="imgHeader">
-                <img src="img/logo-2.svg" alt="NEWS"/>
-            </div>
-            <ul class="ulPrimary">
-                <li>
-                    <a href="#">Sections
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                    <ul class="ulSecundary">
-                        <li>
-                            <a href="#">Sport</a>
-                        </li>
-                        <li>
-                            <a href="#">Entretaiment</a>
-                        </li>
-                        <li>
-                            <a href="#">Social</a>
-                        </li>
-                        <li>
-                            <a href="#">Health</a>
-                        </li>
-                        <li>
-                            <a href="#">Technology</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Editorials</a>
-                </li>
-                <li>
-                    <a href="#">Contact us</a>
-                </li>
-            </ul>
-            <div class="userHeader">
-                <p>JS</p>
-            </div>
-        </div>
-    </header>
-    <div class="principal">
-        <div class="container banner-info">
-            <div class="rectangle">
-                <p class="notice">
-                    Welcome to the new look of News.com. 
-                    Keep scrolling to discover interesting 
-                    new features and news.
-                </p>
-                <a  href="#" 
-                    id="iconCloseInfo"
-                    onclick="closeBannerIcon()">
-                    <i class="fas fa-window-close"></i>
-                </a>
-            </div>
-            <div class="">
-                <h2>Top news</h2>
-                <div id="newContainer" class=" row">
-                </div>
-                <div class="btn-more">
-                    <button class="btn btn-large btn-primary">
-                        View more stories
-                    </button>
-                </div>
-            </div>
-        </div>
+  <script src="js/index.js"></script>
+  <header class="fixed-top">
+    <div class="container header-principal">
+      <div class="img-header">
+        <img src="img/logo-2.svg" alt="NEWS"/>
+      </div>
+      <ul class="ul-primary">
+        <li>
+          <a href="#">Sections
+            <i class="fas fa-angle-down"></i>
+          </a>
+          <ul class="ul-secundary">
+              <li>
+                  <a href="#">Sport</a>
+              </li>
+              <li>
+                  <a href="#">Entretaiment</a>
+              </li>
+              <li>
+                  <a href="#">Social</a>
+              </li>
+              <li>
+                  <a href="#">Health</a>
+              </li>
+              <li>
+                  <a href="#">Technology</a>
+              </li>
+          </ul>
+        </li>
+        <li>
+            <a href="#">Editorials</a>
+        </li>
+        <li>
+            <a href="#">Contact us</a>
+        </li>
+      </ul>
+      <div class="user-header">
+        <p>JS</p>
+      </div>
     </div>
-    <footer>
-
-    </footer>
+  </header>
+  <div class="principal">
+    <div class="container banner-info">
+      <div class="rectangle">
+          <p class="notice">
+              Welcome to the new look of News.com. 
+              Keep scrolling to discover interesting 
+              new features and news.
+          </p>
+          <a  href="#" 
+              id="iconCloseInfo"
+              onclick="closeBannerIcon()">
+              <i class="fas fa-window-close"></i>
+          </a>
+      </div>
+      <div class="">
+          <h2>Top news</h2>
+          <div id="new-container" class=" row">
+          </div>
+          <div class="btn-more">
+              <button 
+                  class="btn btn-large btn-primary"
+                  onclick="showMoreNew()">
+                  View more stories
+              </button>
+          </div>
+      </div>
+    </div>
+    <div class="banner-suscribe">
+      <div class="banner-suscribe-img">
+          <img src="img/22589-1-2x.jpg" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="banner-suscribe-text col-sm-12 col-lg-6">
+            <h3>
+              Subscribe to our newsletter.
+            </h3>
+            <p>
+              Subscribe to our newsletter to receive weekly 
+              digests of the best and most ground-breaking news. 
+              Also receive a discount on your monthly subscription. 
+            </p>
+            <button>
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-us">
+      <h3>Contact Us</h3>
+      <div class="contact-us-form container">
+        <form>
+          <div class="row">
+            <div class="form-group col-sm-12 col-lg-6 firstname">
+              <span>First Name</span>
+              <input 
+                id="firstname"
+                type="text" 
+                name="firstname"
+                class="form-control"
+                autocomplete="off"
+                required
+                onkeyup="validate('firstname')"/>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 lastname">
+              <span>Last Name</span>
+              <input 
+                id="lastname"
+                type="text" 
+                name="lastname"
+                class="form-control"
+                autocomplete="off"
+                required
+                onkeyup="validate('lastname')"/>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 email">
+              <span>Email</span>
+              <input 
+                id="email"
+                type="text" 
+                name="email"
+                class="form-control"
+                autocomplete="off"
+                required
+                onkeyup="validate('email')"/>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 phonenumber">
+              <span>Phone number</span>
+              <input 
+                id="phonenumber"
+                type="text" 
+                name="phonenumber"
+                class="form-control"
+                autocomplete="off"
+                required
+                onkeyup="validate('phonenumber')"/>
+            </div>
+            <div class="form-group col-sm-12 emailtext">
+              <span>Email text</span>
+              <textarea 
+                id="emailtext"
+                name="emailtext"
+                autocomplete="off"
+                required
+                class="form-control"></textarea>
+            </div>
+            <div class="form-group col-sm-12 chkboxpromotions">
+              <input 
+                type="checkbox" 
+                class="form-check-input form"  
+                name="chkboxpromotions"/>
+              <label 
+                class="form-check-label" 
+                for="exampleCheck1">
+                    Send me emails about breaking 
+                    news and promotions.
+              </label>
+            </div>
+            <div class="form-group col-sm-12 btn-form">
+              <button 
+                type="submit"
+                class="btn btn-primary btn-large"
+                onclick="validateForm()">
+                  Submit form
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+  </footer>
 </body>
 </html>
