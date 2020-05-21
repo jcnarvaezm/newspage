@@ -24,47 +24,47 @@
       </div>
       <ul class="ul-primary">
         <li>
-          <a href="#">Sections
+          <button>Sections
             <i class="fas fa-angle-down"></i>
-          </a>
+          </button>
           <ul class="ul-secundary">
               <li>
-                  <a href="#">
+                  <button>
                     <i class="fas fa-football-ball"></i>
                     Sport
-                  </a>
+                  </button>
               </li>
               <li>
-                  <a href="#">
+                  <button>
                     <i class="fas fa-film"></i>
                     Entertainment
-                  </a>
+                  </button>
               </li>
               <li>
-                  <a href="#">
+                  <button>
                     <i class="fas fa-users"></i>
                     Social
-                  </a>
+                  </button>
               </li>
               <li>
-                  <a href="#">
+                  <button>
                     <i class="fas fa-heartbeat"></i>
                     Health
-                  </a>
+                  </button>
               </li>
               <li>
-                  <a href="#">
+                  <button>
                     <i class="fas fa-mobile-alt"></i>
                     Technology
-                  </a>
+                  </button>
               </li>
           </ul>
         </li>
         <li>
-            <a href="#">Editorials</a>
+            <button>Editorials</button>
         </li>
         <li>
-            <a href="#">Contact us</a>
+            <button>Contact us</button>
         </li>
       </ul>
       <div class="user-header">
@@ -72,43 +72,43 @@
       </div>
     </div>
   </header>
-  <div class="principal">
+  <div class="main">
+    <h1>News</h1>
     <div class="container banner-info">
-      <div class="rectangle">
+      <section class="rectangle">
           <p class="notice">
               Welcome to the new look of News.com. 
               Keep scrolling to discover interesting 
               new features and news.
           </p>
-          <a  href="#" 
+          <button 
               id="iconCloseInfo"
               onclick="closeBannerIcon()">
               <i class="fas fa-window-close"></i>
-          </a>
-      </div>
+          </button>
+      </section>
       <div class="content-news">
           <h2>Top news</h2>
-          <div id="new-container" class=" row">
-          </div>
-          <div class="btn-more">
+          <section id="new-container" class=" row">
+          </section>
+          <section class="btn-more">
               <button 
                   class="btn btn-large btn-primary"
                   onclick="showMoreNew()">
                   View more stories
               </button>
-          </div>
+          </section>
       </div>
     </div>
     <div class="banner-suscribe">
-      <div class="banner-suscribe-img">
-          <img src="img/22589-1-2x.jpg" />
-      </div>
+      <section class="banner-suscribe-img">
+      </section>
       <div class="container">
         <div class="row">
-          <div class="banner-suscribe-text col-sm-12 col-lg-6">
-            <h3>
+          <section class="banner-suscribe-text col-sm-12 col-lg-6">
+            <h2>
               Subscribe to our newsletter.
-            </h3>
+            </h2>
             <p>
               Subscribe to our newsletter to receive weekly 
               digests of the best and most ground-breaking news. 
@@ -117,17 +117,17 @@
             <button>
               Subscribe
             </button>
-          </div>
+          </section>
         </div>
       </div>
     </div>
     <div class="contact-us">
-      <h3>Contact Us</h3>
+      <h2>Contact Us</h2>
       <div class="contact-us-form container">
         <form id="form-contact-us">
           <div class="row">
-            <div class="form-group col-sm-12 col-lg-6 firstname">
-              <span>First Name</span>
+            <section class="form-group col-sm-12 col-lg-6 firstname">
+              <label>First Name</label>
               <input 
                 id="firstname"
                 type="text" 
@@ -136,9 +136,9 @@
                 autocomplete="off"
                 required
                 onkeyup="validate('firstname')"/>
-            </div>
-            <div class="form-group col-sm-12 col-lg-6 lastname">
-              <span>Last Name</span>
+            </section>
+            <section class="form-group col-sm-12 col-lg-6 lastname">
+              <label>Last Name</label>
               <input 
                 id="lastname"
                 type="text" 
@@ -147,9 +147,9 @@
                 autocomplete="off"
                 required
                 onkeyup="validate('lastname')"/>
-            </div>
-            <div class="form-group col-sm-12 col-lg-6 email">
-              <span>Email</span>
+            </section>
+            <section class="form-group col-sm-12 col-lg-6 email">
+              <label>Email</label>
               <input 
                 id="email"
                 type="text" 
@@ -158,9 +158,9 @@
                 autocomplete="off"
                 required
                 onkeyup="validate('email')"/>
-            </div>
-            <div class="form-group col-sm-12 col-lg-6 phonenumber">
-              <span>Phone number</span>
+            </section>
+            <section class="form-group col-sm-12 col-lg-6 phonenumber">
+              <label>Phone number</label>
               <input 
                 id="phonenumber"
                 type="text" 
@@ -169,9 +169,9 @@
                 autocomplete="off"
                 required
                 onkeyup="validate('phonenumber')"/>
-            </div>
-            <div class="form-group col-sm-12 emailtext">
-              <span>Email text</span>
+            </section>
+            <section class="form-group col-sm-12 emailtext">
+              <label>Email text</label>
               <textarea 
                 id="emailtext"
                 name="emailtext"
@@ -179,7 +179,7 @@
                 required
                 class="form-control"></textarea>
             </div>
-            <div class="form-group col-sm-12 chkboxpromotions">
+            <section class="form-group col-sm-12 chkboxpromotions">
               <input 
                 id="chkboxpromotions"
                 type="checkbox" 
@@ -191,15 +191,15 @@
                     Send me emails about breaking 
                     news and promotions.
               </label>
-            </div>
-            <div class="form-group col-sm-12 btn-form">
+            </section>
+            <section class="form-group col-sm-12 btn-form">
               <button 
                 type="submit"
                 class="btn btn-primary btn-large"
                 >
                   Submit form
               </button>
-            </div>
+            </section>
           </form>
         </div>
       </div>

@@ -27,9 +27,11 @@ header{
 .ul-primary li{
   margin: 1em;
 }
-.ul-primary li a{
+.ul-primary li button{
   color: #000;
   font-size: 16px;   
+  border: none;
+  background-color: transparent;
 }
 .ul-primary li .ul-secundary{
   display: flex;
@@ -74,11 +76,14 @@ header{
   transform: translateY(25%);
   margin: 0;
 }
-.principal{
+.main{
   position: relative;
   padding-top: 91px;
   background-color: #F2F4F8;
   padding-bottom: 4em;
+}
+h1{
+  display: none;
 }
 .content-news h2{
   margin-bottom: 1em;
@@ -95,11 +100,18 @@ header{
   padding: 13px 18px;
   padding-right: 2em;
 }
-.fa-window-close{
+#iconCloseInfo{
   position: absolute;
-  right: 1em;
-  top: 0%;
-  transform: translateY(100%);
+    top: 0;
+    right: 15px;
+    border: none;
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    transform: translateY(90%);
+    outline: none;
+}
+.fa-window-close{
   color: #ccc;
 }
 .new{
@@ -141,6 +153,11 @@ header{
   position: relative;
   height: 500px;
 }
+.banner-suscribe-img{
+  background-image: url('../img/22589-1-2x.jpg');
+  background-position: center;
+  background-size: cover;
+}
 .banner-suscribe-text{
   position: relative;
   top: 0;
@@ -164,7 +181,7 @@ header{
   margin-top: 5em;
   margin-bottom: 3em;
 }
-.contact-us h3{
+.contact-us h2{
   text-align: center;
 }
 .contact-us-form{
@@ -175,10 +192,10 @@ header{
   padding-top: 2em;
   padding-bottom: 1em;
 }
-.contact-us-form div div{
+.contact-us-form div section{
   margin-bottom: 3em;
 }
-.contact-us-form div div span{
+.contact-us-form div section label{
   font-size: 12px;
 }
 .btn-form{

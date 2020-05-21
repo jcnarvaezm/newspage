@@ -1,4 +1,5 @@
 $(document).on('ready',function(){
+  
   let form = document.getElementById('form-contact-us')
   let modalInfo = document.getElementById('info-contact-us')
 
@@ -37,27 +38,42 @@ $(document).on('ready',function(){
       `
       $('#exampleModal').modal('show')
     }
-    console.log(data)
   })
 })
 
 function validateForm() {
-  let firstName = $('#firstname').val()
-  let lastname = $('#lastname').val()
-  let email = $('#email').val()
-  let phonenumber = $('#phonenumber').val()
-  let emailtext = $('#emailtext').val()
-  if(firstName !== '' && 
-      lastname !== '' && 
-      email !== '' && 
-      phonenumber !== '' && 
-      emailtext !== ''){
-        if($('.phonenumber').hasClass('has-success') && $('.email').hasClass('has-success')){
-          return true
-        }else{
-          return true
-        }
+
+  let firstName = $('#firstname').val().trim()
+  let lastname = $('#lastname').val().trim()
+  let email = $('#email').val().trim()
+  let phonenumber = $('#phonenumber').val().trim()
+  let emailtext = $('#emailtext').val().trim()
+  
+  const formContactUs = document.querySelector('#form-contact-us')
+  formContactUs.innerHTML += ''
+  if(showNotice(firstName,formContactUs,'First Name') &&
+    showNotice(lastname,formContactUs,'Last Name') &&
+    showNotice(email,formContactUs,'Email') &&
+    showNotice(phonenumber,formContactUs,'Phone Number') &&
+    showNotice(emailtext,formContactUs,'Email text') 
+  ){
+    if($('.phonenumber').hasClass('has-success') && $('.email').hasClass('has-success')){
+      return true
+    }else{
+      return false
+    }
   }else{
-    return true
+    return false
   }
+}
+
+function showNotice(input,formContactUs,nameInput){
+  if(input.length <= 0){
+  formContactUs.innerHTML +=
+    `<div class="rectangle">
+      <p class="notice">Please fill in the field: ${nameInput}</p>
+    </div>`
+    return false
+  }
+  return true
 }

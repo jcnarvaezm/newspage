@@ -1,14 +1,14 @@
 const API = `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`
 
-let i = 1
+let indexNew = 1
 
 $(document).on('ready',function(){
-  getData(i)
+  getData(indexNew)
 })
 
-async function getData(i) {
-  let j = i * 4
-  let k = 0
+async function getData(indexNew) {
+  let numberNews = indexNew * 4
+  let iterator = 0
   let newContainer = document.querySelector('#new-container')
   let info = await fetch(API)
     .then(res => res.json())
@@ -16,26 +16,26 @@ async function getData(i) {
       return data.articles
     })
 
-  if(i > 1){
-    k = j-4
+  if(indexNew > 1){
+    iterator = numberNews - 4
   }
 
-  for(; k < info.length; k++){
-    if(k < j){
+  for(; iterator < info.length; iterator++){
+    if(iterator < numberNews){
       newContainer.innerHTML += `
-        <div class="new col-sm-12 col-md-6">
-          <div class="img-new"> 
-            <a href='${info[k]['url']}' target="_blank">
-              <img src="${info[k]['urlToImage']}" /> 
+        <section class="new col-sm-12 col-md-6">
+          <section class="img-new"> 
+            <a href='${info[iterator]['url']}' target="_blank">
+              <img src="${info[iterator]['urlToImage']}" alt="" /> 
             </a>
-          </div>
-          <div class="titular"> 
-            <h4> ${info[k]['title']} </h4> 
-          </div>
-          <div class="summary"> 
-            <p>${info[k]['description']}</p>
-          </div>
-        </div>`
+          </section>
+          <section class="titular"> 
+            <h4> ${info[iterator]['title']} </h4> 
+          </section>
+          <section class="summary"> 
+            <p>${info[iterator]['description']}</p>
+          </section>
+        </section>`
     }   
   }
 }
@@ -45,6 +45,6 @@ function closeBannerIcon(){
 }
 
 function showMoreNew(){
-  i++
-  getData(i)
+  indexNew++
+  getData(indexNew)
 }

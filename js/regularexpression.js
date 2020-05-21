@@ -1,17 +1,17 @@
 
 function validate(input) {
-  var val = document.getElementById(input).value;
+  let textInput = document.getElementById(input).value;
   switch (input){
     case "phonenumber":
-      if (notNullOrSpace(input,val)){
-        if ((/^([0-9]{10})$/.test(val))) {
+      if (notNullOrSpace(input,textInput)){
+        if ((/^([0-9]{10})$/.test(textInput))) {
           addCssSuccess(input)
         }else{
-          if (!(/^3/.test(val))) {
+          if (!(/^3/.test(textInput))) {
             addCssError(input)
-          } else if (val.length > 10) {
+          } else if (textInput.length > 10) {
             addCssError(input)
-          } else if (val.length < 10) {
+          } else if (textInput.length < 10) {
             addCssError(input)
           } else {
             addCssError(input)
@@ -22,16 +22,16 @@ function validate(input) {
       }
       break
     case "email":
-      if (notNullOrSpace(input,val)){
-        if ((/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-]{4,})+\.)+([a-zA-Z0-9]{2,})((\.+([a-zA-Z0-9]{2,}))?)+$/.test(val))) {
+      if (notNullOrSpace(input,textInput)){
+        if ((/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-]{4,})+\.)+([a-zA-Z0-9]{2,})((\.+([a-zA-Z0-9]{2,}))?)+$/.test(textInput))) {
           addCssSuccess(input)
         }else{
-          if (/^[@-_.]/.test(val)) {
+          if (/^[@-_.]/.test(textInput)) {
             addCssError(input)
           } else {
             addCssError(input)
           }
-          if (/^[0-9]/.test(val)) {
+          if (/^[0-9]/.test(textInput)) {
             addCssError(input)
           }
         }
@@ -41,8 +41,8 @@ function validate(input) {
       break
     }
 }
-function notNullOrSpace(input,val){
-  if (val === null || val.length === 0 || /^\s+$/.test(val)) {
+function notNullOrSpace(input,textInput){
+  if (textInput === null || textInput.length === 0 || /^\s+$/.test(textInput)) {
     return false
   }else{
     return true
