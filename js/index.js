@@ -25,7 +25,9 @@ async function getData(i) {
       newContainer.innerHTML += `
         <div class="new col-sm-12 col-md-6">
           <div class="img-new"> 
-            <img src="${info[k]['urlToImage']}" /> 
+            <a href='${info[k]['url']}' target="_blank">
+              <img src="${info[k]['urlToImage']}" /> 
+            </a>
           </div>
           <div class="titular"> 
             <h4> ${info[k]['title']} </h4> 

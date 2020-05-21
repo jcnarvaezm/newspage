@@ -80,6 +80,9 @@ header{
   background-color: #F2F4F8;
   padding-bottom: 4em;
 }
+.content-news h2{
+  margin-bottom: 1em;
+}
 .rectangle{
   background-color: #DFEFFD;
   width: 100%;
@@ -136,6 +139,7 @@ header{
 .banner-suscribe, .banner-suscribe-img, .banner-suscribe-img img{
   width: 100%;  
   position: relative;
+  height: 500px;
 }
 .banner-suscribe-text{
   position: relative;
@@ -196,6 +200,13 @@ header{
 .chkboxpromotions label{
   margin-left: 2em;
 }
+.has-success{
+  color: black;
+}
+.has-error{
+  color: red;
+}
+
 @media (max-width: 620px){
   .header-principal, .banner-info{
     width: 100%;
@@ -207,5 +218,8 @@ header{
   }
   .ul-primary li {
     margin: .5em;
+  }
+  .contact-us-form{
+    width: 100%;
   }
 }

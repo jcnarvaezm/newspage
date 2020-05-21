@@ -49,27 +49,12 @@ function notNullOrSpace(input,val){
   }
 }
 function addCssError(input){
-  $(`.${input}`).css({"color":"red"});
+  $(`.${input}`).removeClass('has-success')
+  $(`.${input}`).addClass('has-error')
   $(`#${input}`).css({"border":"solid 1px red","color":"red"})
 }
 function addCssSuccess(input){
-  $(`.${input}`).css({"color":"green"});
-  $(`#${input}`).css({"border":"solid 1px green","color":"green"})
-}
-function validateForm() {
-  $("#exampleModal").modal("show");
-  let firstName = $('#firstname').val()
-  let lastname = $('#lastname').val()
-  let email = $('#email').val()
-  let phonenumber = $('#phonenumber').val()
-  let emailtext = $('#emailtext').val()
-  if(firstName !== '' && 
-      lastname !== '' && 
-      email !== '' && 
-      phonenumber !== '' && 
-      emailtext !== ''){
-        $("#exampleModal").modal("show");
-  }else{
-    alert('Please ')
-  }
+  $(`.${input}`).removeClass('has-error')
+  $(`.${input}`).addClass('has-success');
+  $(`#${input}`).css({"border":"solid 1px #ccc","color":"black"})
 }
