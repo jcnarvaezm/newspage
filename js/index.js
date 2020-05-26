@@ -10,11 +10,32 @@ async function getData(indexNew) {
   let numberNews = indexNew * 4
   let iterator = 0
   let newContainer = document.querySelector('#new-container')
-  let info = await fetch(API)
-    .then(res => res.json())
-    .then((data) => {
-      return data.articles
-    })
+  var params = {
+    "query": "{\"$query\":{\"categoryUri\":\"dmoz/Health\"}}",
+    "dataType": [
+        "news"
+    ],
+    "resultType": "articles",
+    "articlesSortBy": "date",
+    "articlesCount": 100,
+    "articleBodyLen": -1,
+    "apiKey": "65e9cbc8-be98-4b0e-a423-005257373b5f"
+}
+
+let articles = await $.ajax({ 
+  url: "http://eventregistry.org/api/v1/article/getArticles", 
+  crossDomain: true, 
+  data: params, 
+  method: 'GET',
+})
+  .done(function(res) {
+    return res
+  })
+  .fail(function(err) { 
+    console.error(err.statusText);
+  })
+
+let info = articles.articles.results
 
   if(indexNew > 1){
     iterator = numberNews - 4
@@ -26,14 +47,14 @@ async function getData(indexNew) {
         <section class="new col-sm-12 col-md-6">
           <section class="img-new"> 
             <a href='${info[iterator]['url']}' target="_blank">
-              <img src="${info[iterator]['urlToImage']}" alt="" /> 
+              <img src="${info[iterator]['image']}" alt="" /> 
             </a>
           </section>
           <section class="titular"> 
             <h4> ${info[iterator]['title']} </h4> 
           </section>
           <section class="summary"> 
-            <p>${info[iterator]['description']}</p>
+            <p>${info[iterator]['body']}</p>
           </section>
         </section>`
     }   

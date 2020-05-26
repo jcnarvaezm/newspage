@@ -67,11 +67,20 @@ function validateForm() {
   }
 }
 
+function closeAlert(e){
+  $(e).parent().remove()
+}
+
 function showNotice(input,formContactUs,nameInput){
   if(input.length <= 0){
   formContactUs.innerHTML +=
-    `<div class="rectangle">
-      <p class="notice">Please fill in the field: ${nameInput}</p>
+    `<div class="alert alert-danger" role="alert">
+      Please fill in the field: ${nameInput}
+      <button 
+        id="iconCloseInfo"
+        onclick="closeAlert(this)">
+          <i class="fas fa-window-close"></i>
+      </button>
     </div>`
     return false
   }
