@@ -2,17 +2,24 @@
   margin: 0;
   padding: 0;
 }
+
 .container{
   width: 70%;
+
+  @media screen and (max-width: 620px){
+    width: 100%;
+  }
 }
+
 .main{
   position: relative;
   padding-top: 91px;
   background-color: #F2F4F8;
   padding-bottom: 4em;
-}
-h1{
-  display: none;
+
+  h1{
+    display: none;
+  }
 }
 
 @import "header";
