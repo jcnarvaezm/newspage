@@ -1,0 +1,33 @@
+.rectangle{
+  background-color: #DFEFFD;
+  width: 100%;
+  position: relative;
+
+  .notice{
+    color: #1D2121;
+    font-size: 16px;
+    width: 100%;
+    padding: 13px 18px;
+    padding-right: 2em;
+  }
+
+  #iconCloseInfo{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    border: none;
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    transform: translateY(90%);
+    outline: none;
+
+    .fa-window-close{
+      color: #ccc;
+    }
+  }
+
+  @media screen and (max-width: 620px){
+    width: 100%;
+  }
+}

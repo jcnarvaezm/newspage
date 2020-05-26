@@ -1,0 +1,64 @@
+.contact-us{
+  margin-top: 5em;
+  margin-bottom: 3em;
+
+  h2{
+    text-align: center;
+  }
+
+  .contact-us-form{
+    background: #fff;
+    border-radius: .25em;
+    margin-top: 2em;
+    padding: 3em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+
+    div{
+      section{
+        margin-bottom: 3em;
+
+        label{
+          font-size: 12px;
+        }
+      }
+    }
+
+    .chkboxpromotions{
+      align-items: center;
+      justify-content: center;  
+      
+      input{
+        width: 21px;
+        height: 21px;
+        border: none;
+        margin-left: auto;
+        transform: translateY(-10%);
+      }
+
+      label{
+        margin-left: 2em;
+      }
+    }
+
+    .btn-form{
+      text-align: center;
+      
+      button{
+        padding: .5em 2em;
+        margin-top: 2em;
+      }
+    }
+
+    @media screen and (max-width: 425px){
+      width: 100%;
+    }
+  }
+}
+
+.has-success{
+  color: black;
+}
+.has-error{
+  color: red;
+}

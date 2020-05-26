@@ -1,0 +1,22 @@
+.user-header{
+  background-color: #9100AD;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  right: 15px;
+  transform: translateY(75%);
+  
+  p{
+    font-family: Open Sans Bold;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    transform: translateY(25%);
+    margin: 0;
+  }
+}
