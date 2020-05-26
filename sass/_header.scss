@@ -1,16 +1,16 @@
-header{
+header {
   background-color: #fff;
-  box-shadow: 1px 1px 5px -1px rgba(0,0,0, .5);
+  box-shadow: 1px 1px 5px -1px rgba(0, 0, 0, 0.5);
   width: 100%;
-  .header-principal{
+  .header-principal {
     display: flex;
     position: relative;
-    .img-header{
-      img{
+    .img-header {
+      img {
         margin: 11px auto;
       }
     }
-    @media screen and (max-width: 620px){
+    @media screen and (max-width: 620px) {
       width: 100%;
     }
   }

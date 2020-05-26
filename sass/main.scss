@@ -1,24 +1,24 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.container{
+.container {
   width: 70%;
 }
-.main{
+.main {
   position: relative;
   padding-top: 91px;
-  background-color: #F2F4F8;
+  background-color: #f2f4f8;
   padding-bottom: 4em;
 }
-h1{
+h1 {
   display: none;
 }
 
-@import "header";
-@import "header-list";
-@import "header-user";
-@import "banner-info";
-@import "content-new";
-@import "banner-suscribe";
-@import "contact-us";
+@import 'header';
+@import 'header-list';
+@import 'header-user';
+@import 'banner-info';
+@import 'content-new';
+@import 'banner-suscribe';
+@import 'contact-us';
