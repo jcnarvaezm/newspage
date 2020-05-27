@@ -25,5 +25,6 @@ module.exports = {
     'global-require': 'off',
     'no-new-require': 'off',
     'no-undef': 'off',
+    parserOptions: { sourceType: 'module' },
   },
 };
