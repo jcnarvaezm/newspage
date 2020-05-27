@@ -49,12 +49,36 @@ function validateForm() {
 
   const formContactUs = document.querySelector('#form-contact-us');
   formContactUs.innerHTML += '';
+
+  let modalValidatorFirstName = showNotice(
+    firstName,
+    formContactUs,
+    'First Name'
+  );
+  let modalValidatorLasttName = showNotice(
+    lastname,
+    formContactUs,
+    'Last Name'
+  );
+  let modalValidatorEmail = showNotice(email, formContactUs, 'Email');
+  let modalValidatorPhoneNumber = showNotice(
+    phonenumber,
+    formContactUs,
+    'Phone Number'
+  );
+  let modalValidatorEmailText = showNotice(
+    emailtext,
+    formContactUs,
+    'Email text'
+  );
+  showWarning($('.email'), formContactUs, 'Email');
+  showWarning($('.phonenumber'), formContactUs, 'Phone Number');
   if (
-    showNotice(firstName, formContactUs, 'First Name') &&
-    showNotice(lastname, formContactUs, 'Last Name') &&
-    showNotice(email, formContactUs, 'Email') &&
-    showNotice(phonenumber, formContactUs, 'Phone Number') &&
-    showNotice(emailtext, formContactUs, 'Email text')
+    modalValidatorFirstName &&
+    modalValidatorLasttName &&
+    modalValidatorEmail &&
+    modalValidatorPhoneNumber &&
+    modalValidatorEmailText
   ) {
     if (
       $('.phonenumber').hasClass('has-success') &&
@@ -80,10 +104,24 @@ function showNotice(input, formContactUs, nameInput) {
       <button 
         id="iconCloseInfo"
         onclick="closeAlert(this)">
-          <i class="fas fa-window-close"></i>
+          <i class="fas fa-times"></i>
       </button>
     </div>`;
     return false;
   }
   return true;
+}
+
+function showWarning(input, formContactUs, nameInput) {
+  if (input.hasClass('has-error')) {
+    formContactUs.innerHTML += `<div class="alert alert-danger" role="alert">
+      The field: '${nameInput}' has not the correct format
+      <button 
+        id="iconCloseInfo"
+        onclick="closeAlert(this)">
+          <i class="fas fa-times"></i>
+      </button>
+    </div>`;
+    return false;
+  }
 }

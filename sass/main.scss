@@ -14,7 +14,20 @@
 h1 {
   display: none;
 }
+.btn-more {
+  text-align: center;
 
+  button {
+    margin: 2em auto;
+    margin-bottom: 5em;
+    height: 39px;
+    width: 170px;
+    background-color: #0073e9;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
 @import 'header';
 @import 'header-list';
 @import 'header-user';
@@ -22,3 +35,4 @@ h1 {
 @import 'content-new';
 @import 'banner-suscribe';
 @import 'contact-us';
+@import 'info-form';

@@ -64,7 +64,7 @@ async function getData(indexNew) {
 }
 
 function closeBannerIcon() {
-  $('.rectangle').css({ transition: 'all 1s', transform: 'scale(0)' });
+  $('.rectangle').hide();
 }
 
 function showMoreNew() {
